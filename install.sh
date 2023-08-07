@@ -20,7 +20,7 @@ if [ "$EUID" -ne 0 ]
   exit 1
 fi
 
-FILE=/etc/systemd/system/wifi-checker/wifi-checker.service
+FILE=/etc/systemd/system/wifi-checker.service
 
 if [[ -f "$FILE" ]]; then
     echo "File $FILE exists ! You have already installed this script, or something else is using it. Please fix that."
@@ -30,13 +30,13 @@ fi
 FILE=/etc/Wi-Fi_Checker/main.py
 
 if [[ -f "$FILE" ]]; then
-    echo "File $FILE exists ! You have already installed this script, or som    ething else is using it. Please fix that."
+    echo "File $FILE exists ! You have already installed this script, or something else is using it. Please fix that."
     exit 1
 fi
 
 mkdir -p /etc/systemd/system/wifi-checker
-cp wifi-checker.service /etc/systemd/system/wifi-checker/wifi-checker.service
-chmod 644 /etc/systemd/system/wifi-checker/wifi-checker.servic
+cp wifi-checker.service /etc/systemd/system/wifi-checker.service
+chmod 644 /etc/systemd/system/wifi-checker.service
 
 mkdir -p /etc/Wi-Fi_Checker/
 cp main.py /etc/Wi-Fi_Checker/main.py
