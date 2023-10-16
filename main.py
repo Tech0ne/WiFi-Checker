@@ -67,3 +67,6 @@ def main():
         info(f"Current ping to google is {tm}")
         requests.post(SERVER_URL + "/update", data = {'ping': tm})
         time.sleep(9 * 60)
+
+if __name__ == "__main__":
+    main()
